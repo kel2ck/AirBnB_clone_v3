@@ -14,7 +14,7 @@ from api.v1.views import app_views
 
 @app_views.route('/cities/<city_id>/places', methods=['GET'],
                  strict_slashes=False)
-def get_city(city_id):
+def get_places(city_id):
     """
     Retrieves the list of all Place objects of a City
     """
