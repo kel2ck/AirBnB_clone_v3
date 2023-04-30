@@ -6,7 +6,7 @@ RESTFul API actions
 from models import storage
 from models.user import User
 from flask import abort, jsonify, make_response, request
-from api.v1.views import api_views
+from api.v1.views import app_views
 
 
 @app_views.route('/users', methods=['GET'], strict_slashes=False)
