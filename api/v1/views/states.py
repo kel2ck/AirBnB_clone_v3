@@ -6,7 +6,7 @@ from models import storage
 from models.state import State
 from api.v1.views import app_views
 from flask import abort, jsonify, make_response, request
-from flasgger.utils import swag_from
+"""from flasgger.utils import swag_from"""
 
 
 @app_views.route('/states', methods=['GET'], strict_slashes=False)
@@ -17,7 +17,7 @@ def get_states():
     all_states = storage.all(State).values()
     list_states = []
     for state in all_states:
-        list_states.append(state.to_dict)
+        list_states.append(state.to_dict())
     return jsonify(list_states)
 
 
@@ -28,7 +28,7 @@ def get_state(state_id):
     if not state:
         abort(404)
 
-    return jsonify(state.to_dict)
+    return jsonify(state.to_dict())
 
 
 @app_views.route('/states/<state_id>', methods=['DELETE'],
