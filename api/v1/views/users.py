@@ -47,7 +47,7 @@ def delete_user(user_id):
 
     if not user:
         abort(404)
-    
+
     storage.delete(user)
     storage.save()
 
