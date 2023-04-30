@@ -3,8 +3,8 @@
 app.py module
 """
 from models import storage
-from flask import Flask
 from api.v1.views import app_views
+from flask import Flask, render_template, make_response, jsonify
 from os import environ
 
 
