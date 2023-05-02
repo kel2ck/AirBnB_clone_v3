@@ -8,7 +8,8 @@ from api.v1.views import app_views
 from flask import abort, jsonify, make_response, request
 
 
-@app_views.route('/places/<place_id>/reviews', methods=['GET'], strict_slashes=False)
+@app_views.route('/places/<place_id>/reviews', methods=['GET'],
+                 strict_slashes=False)
 def get_reviews(place_id):
     """
     Retrieves the list of all Review objects of a Place
@@ -31,7 +32,8 @@ def get_review(review_id):
     return jsonify(review.to_dict())
 
 
-@app_views.route('/reviews/<review_id>', methods=['DELETE'], strict_slashes=False)
+@app_views.route('/reviews/<review_id>', methods=['DELETE'],
+                 strict_slashes=False)
 def delete_review(review_id):
     """
     Deletes a Review Object
@@ -44,7 +46,8 @@ def delete_review(review_id):
     return make_response(jsonify({}), 200)
 
 
-@app_views.route('/places/<place_id>/reviews', methods=['POST'], strict_slashes=False)
+@app_views.route('/places/<place_id>/reviews', methods=['POST'],
+                 strict_slashes=False)
 def post_review(place_id):
     """
     Creates a Review
